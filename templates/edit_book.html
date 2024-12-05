@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container w3-padding">
+        <div class="w3-card-4 w3-margin w3-animate-top">
+			<header class="w3-container w3-blue">
+                <h3>EDIT BOOK</h3>
+			</header>
+			<form method="POST" class="w3-container w3-card-4">
+				<div class="w3-section">
+					<label for="isbn">ISBN</label>
+					<input type="text" class="w3-input w3-border" id="isbn" name="isbn" value="{{ book[1] }}" required>
+				</div>
+				<div class="w3-section">
+					<label for="title">Title</label>
+					<input type="text" class="w3-input w3-border" id="title" name="title" value="{{ book[2] }}" required>
+				</div>
+				<div class="w3-section">
+					<label for="author">Author</label>
+					<input type="text" class="w3-input w3-border" id="author" name="author" value="{{ book[3] }}" required>
+				</div>
+				<div class="w3-section">
+					<label for="copyright">Copyright</label>
+					<input type="text" class="w3-input w3-border" id="copyright" name="copyright" value="{{ book[4] }}" required>
+				</div>
+				<div class="w3-section">
+					<label for="edition">Edition</label>
+					<input type="text" class="w3-input w3-border" id="edition" name="edition" value="{{ book[5] }}" required>
+				</div>
+				<div class="w3-section">
+					<label for="price">Price</label>
+					<input type="number" step="0.01" class="w3-input w3-border" id="price" name="price" value="{{ book[6] }}" required>
+				</div>
+				<div class="w3-section">
+					<label for="quantity">Quantity</label>
+					<input type="number" class="w3-input w3-border" id="quantity" name="quantity" value="{{ book[7] }}" required>
+				</div>
+				<div class="w3-section w3-center">
+					<button type="submit" class="w3-button w3-blue">Update</button>
+					<a href="{{ url_for('index') }}" class="w3-button w3-red">Cancel</a>
+				</div>
+			</form>
+		</div>
+    </div>
+{% endblock %}
